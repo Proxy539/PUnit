@@ -6,7 +6,14 @@ import org.punit.assertions.Assertions;
 public class TestClass {
 
     @Test
-    public void test() {
-        Assertions.assertEquals(1, 2);
+    public void testNotEquals() {
+        Assertions.assertNotEquals(1, 2);
     }
+
+    @Test
+    public void testEquals() {
+        Assertions.assertEquals(2, 2);
+    }
+
+
 }
