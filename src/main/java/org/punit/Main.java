@@ -20,8 +20,12 @@ public class Main {
                     .forEach(testMethod -> {
                         try {
                             testMethod.invoke(testClassObject);
-                        } catch (IllegalAccessException | InvocationTargetException e) {
+
+                            System.out.println("Test method " + testMethod.getName() + " passed ");
+                        } catch (IllegalAccessException e) {
                             System.err.println(e);
+                        } catch (InvocationTargetException e) {
+                            System.out.println("Test method " + testMethod.getName() + " failed. Fail message:  " + e.getTargetException().getMessage());
                         }
                     });
 
